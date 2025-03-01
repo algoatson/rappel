@@ -6,7 +6,6 @@
 
 #include "common.h"
 #include "exedir.h"
-#include "pipe.h"
 #include "ui.h"
 
 // Defaults
