@@ -70,6 +70,9 @@ void _parse_opts(
 }
 
 int main(int argc, char **argv) {
+  setvbuf(stdin, NULL, _IONBF, 0);
+  setvbuf(stdout, NULL, _IONBF, 0);
+  setvbuf(stderr, NULL, _IONBF, 0);
 	_parse_opts(argc, argv);
 
 	init_rappel_dir();
