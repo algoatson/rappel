@@ -54,7 +54,8 @@ void _parse_opts(
 				break;
 			case 's':
 				options.savefile = optarg;
-				break;
+				break;if (isatty(STDIN_FILENO))
+		interact(argv[0]);
 			case 'p':
 				++options.passsig;
 				break;
@@ -74,10 +75,7 @@ int main(int argc, char **argv) {
 
 	init_rappel_dir();
 
-	if (isatty(STDIN_FILENO))
-		interact(argv[0]);
-	else
-		pipe_mode();
+	interact(argv[0]);
 
 	return 0;
 }
